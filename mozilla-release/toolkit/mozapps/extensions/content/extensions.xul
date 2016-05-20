@@ -160,6 +160,15 @@
                       class="category"
                       name="&view.recentUpdates.label;" priority="101000"
                       tooltiptext="&view.recentUpdates.label;" disabled="true"/>
+
+        <richlistitem id="category-features" value="addons://features/"
+                      class="category" name="CLIQZ Features" tooltiptext="Features"
+                      priority="102000" align="center" count="0">
+                      <image anonid="icon" class="category-icon"/>
+                      <label anonid="name" class="category-name"
+                                 flex="1" xbl:inherits="value=name"
+                                 xmlns:xbl="http://www.mozilla.org/xbl" value="Features"/>
+        </richlistitem>
       </richlistbox>
     </vbox>
     <vbox class="main-content" flex="1">
@@ -340,6 +349,14 @@
                 <label id="search-allresults-link" class="text-link"/>
               </hbox>
             </richlistbox>
+          </vbox>
+
+          <!-- features view -->
+          <vbox id="features-view" flex="1" class="view-pane" tabindex="0">
+            <description> MAGIC </description>
+            <richlistbox id="features-list" class="list" flex="1">
+            </richlistbox>
+            <description> MAGIC </description>
           </vbox>
 
           <!-- list view -->

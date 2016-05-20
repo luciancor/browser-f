@@ -26,6 +26,11 @@ xhtml|link {
   -moz-binding: url("chrome://mozapps/content/extensions/extensions.xml#addon-generic");
 }
 
+.cliqz-feature {
+  -moz-box-orient: vertical;
+  -moz-binding: url("chrome://mozapps/content/extensions/extensions.xml#cliqz-feature");
+}
+
 .addon[status="installing"] {
   -moz-box-orient: vertical;
   -moz-binding: url("chrome://mozapps/content/extensions/extensions.xml#addon-installing");
