@@ -353,10 +353,12 @@
 
           <!-- features view -->
           <vbox id="features-view" flex="1" class="view-pane" tabindex="0">
-            <description> MAGIC </description>
-            <richlistbox id="features-list" class="list" flex="1">
-            </richlistbox>
-            <description> MAGIC </description>
+            <caption><label>Third-party Extensions</label></caption>
+            <caption>You can install verified extensions on your CLIQZ browser</caption>
+            <caption>CLIQZ has no control over data third-parties might access if you use their software</caption>
+            <caption> </caption>
+            <richlistbox id="features-list" class="list" flex="1"></richlistbox>
+            <description> END </description>
           </vbox>
 
           <!-- list view -->

@@ -1765,7 +1765,8 @@
                 <xul:spacer flex="5000"/> <!-- Necessary to make the name crop -->
               </xul:hbox>
           </xul:hbox>
-
+        </xul:vbox>
+        <xul:vbox class="status-control-wrapper">
           <xul:hbox anonid="control-container" class="control-container">
             <xul:button anonid="enable-btn"  class="addon-control enable"
                         label="&cmd.enableAddon.label;"
@@ -1776,7 +1777,7 @@
             <xul:button anonid="remove-btn" class="addon-control remove"
                         label="&cmd.uninstallAddon.label;"
                         oncommand="document.getBindingParent(this).uninstall();"/>
-            <xul:button anonid="remove-install" class="addon-control"
+            <xul:button anonid="install" class="addon-control install"
                         label="&cmd.installAddon.label;"
                         oncommand="document.getBindingParent(this).install();"/>
           </xul:hbox>
@@ -1787,10 +1788,25 @@
     <implementation>
       <constructor><![CDATA[
          this.setAttribute("name", this.mAddon.name);
+         document.getAnonymousElementByAttribute(this, "anonid", "icon").src = this.mAddon.icons["64"] || this.mAddon.icons["32"];
       ]]></constructor>
       <method name="install">
         <body><![CDATA[
-          alert("magic");
+          var progress = document.getAnonymousElementByAttribute(this, "anonid", "icon"),
+              size = this.mAddon.size;
+
+          AddonManager.getInstallForURL(this.mAddon.sourceURI,
+            function(addon) {
+              addon.addListener({
+                onDownloadProgress: function(aInstall) {
+                  console.log(aInstall.progress);
+                  progress.textContent = aInstall.progress / size;
+                }
+              });
+              addon.install();
+            },
+            "application/x-xpinstall"
+          );
         ]]></body>
       </method>
     </implementation>

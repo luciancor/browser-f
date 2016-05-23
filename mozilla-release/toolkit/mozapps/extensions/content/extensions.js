@@ -2658,23 +2658,93 @@ var gFeaturesView = {
       this._listBox.removeChild(this._listBox.firstChild);
 
     var elements = [];
-    var LP = {"id":"support@lastpass.com","icons":{"32":"https://addons.cdn.mozilla.net/user-media/addon_icons/8/8542-32.png?modified=1457436015","64":"https://addons.cdn.mozilla.net/user-media/addon_icons/8/8542-64.png?modified=1457436015"},"name":"LastPass Password Manager","type":"extension","version":"3.3.1","repositoryStatus":4,"creator":{"name":"LastPass","url":"https://addons.mozilla.org/en-US/firefox/user/lastpass/?src=api"},"description":"LastPass, an award-winning password manager, saves your passwords and gives you secure access from every computer and mobile device.","fullDescription":"LastPass is a password manager that simplifies everything you do online by remembering your passwords, logging into your sites with one click, creating strong passwords for every account, and so much more.\n\nJoin over 7 million people who love getting more done every day with our award-winning password manager!\n\nWith LastPass, you only remember one master password and LastPass takes care of the rest. It fills your logins for you and instantly syncs from your desktop to your laptop, your computer to your smartphone, your tablet to the Web, so you never struggle to remember another password.\n\nWhy Use a Password Manager?\n- Save, encrypt and backup all your passwords and logins, automatically\n- Sync your data no matter which browser, computer, or mobile device you use\n- Only one strong master password to remember\n- Securely store more logins, with more universal recognition of websites, including bank logins\n- All the features you need to be more productive and efficient\n- Only YOU know your master password, LastPass never has your key\n- Secure offline access to your data via the browser extensions and mobile apps\n\nSave Everything & Increase Productivity:\n- Store login usernames and passwords for all online accounts\n- Fill web logins automatically - no typing required!\n- Checkout fast with shopping profiles\n- Create Secure Notes to store memberships, credit cards, & other important records\n- Attach documents, PDFs, images, audio, and more\n- Keep everything organized in a searchable “vault”\n- Collaborate with others with more secure password sharing features\n\nUniversal Access:\n- Add LastPass to any browser on any computer\n- Login with the same LastPass account everywhere\n- Sync all of your passwords and data automatically\n- Upgrade to LastPass Premium for unlimited sync across unlimited devices, including any desktop, laptop, smartphone, or tablet.\nLearn more: https://lastpass.com/go-premium\n\n\nSecurity First:\n- Generate secure passwords to replace weak ones\n- Change passwords automatically on over 75 sites with Auto-Password Change\n- Create strong, unique passwords as you sign up for new websites\n- Protect your LastPass account with multifactor authentication\n- Audit your passwords with the LastPass Security Challenge\n- Flexible security features like autologoff options and master password reprompts\n\nLastPass utilizes military-grade AES 256bit encryption implemented with salted hashing, along with PBKDF2 encryption keys to protect from brute-force attacks and other threats. All sensitive user data is encrypted and decrypted locally on the user's machine, so that only encrypted, sensitive information is ever synced with LastPass. Your master password is never shared with LastPass.\n\nLastPass is free to download and use on any desktop or laptop computer. LastPass Premium adds more features, like unlimited sync across any type of device, plus sharing features for family, and Premium two-factor authentication options..\n\nLearn about more features and get LastPass for Internet Explorer, Firefox, Safari, and Opera from www.LastPass.com","isPlatformCompatible":true,"eula":null,"screenshots":[{"url":"https://addons.cdn.mozilla.net/user-media/previews/full/171/171883.png?src=api&modified=1457369923","width":"440","height":"280","thumbnailURL":"https://addons.cdn.mozilla.net/user-media/previews/thumbs/171/171883.png?src=api&modified=1457369923","thumbnailWidth":"200","thumbnailHeight":"127","caption":"LastPass is an award-winning password manager and form fill for all browsers, platforms, and mobile devices."},{"url":"https://addons.cdn.mozilla.net/user-media/previews/full/171/171884.png?src=api&modified=1457369924","width":"640","height":"400","thumbnailURL":"https://addons.cdn.mozilla.net/user-media/previews/thumbs/171/171884.png?src=api&modified=1457369924","thumbnailWidth":"200","thumbnailHeight":"125","caption":"All your data, everywhere you need it."},{"url":"https://addons.cdn.mozilla.net/user-media/previews/full/171/171885.png?src=api&modified=1457369924","width":"640","height":"400","thumbnailURL":"https://addons.cdn.mozilla.net/user-media/previews/thumbs/171/171885.png?src=api&modified=1457369924","thumbnailWidth":"200","thumbnailHeight":"125","caption":"Autofill your logins & save as you go, no forgotten passwords."},{"url":"https://addons.cdn.mozilla.net/user-media/previews/full/171/171886.png?src=api&modified=1457369924","width":"640","height":"400","thumbnailURL":"https://addons.cdn.mozilla.net/user-media/previews/thumbs/171/171886.png?src=api&modified=1457369924","thumbnailWidth":"200","thumbnailHeight":"125","caption":"Create strong passwords & LastPass remembers them for you."},{"url":"https://addons.cdn.mozilla.net/user-media/previews/full/171/171887.png?src=api&modified=1457369924","width":"640","height":"400","thumbnailURL":"https://addons.cdn.mozilla.net/user-media/previews/thumbs/171/171887.png?src=api&modified=1457369924","thumbnailWidth":"200","thumbnailHeight":"125","caption":"Manage all of your accounts from one easy-to-use vault."}],"averageRating":4,"learnmoreURL":"https://addons.mozilla.org/en-US/firefox/addon/lastpass-password-manager/?src=api","homepageURL":"https://lastpass.com/","sourceURI":"https://addons.mozilla.org/firefox/downloads/file/407589/lastpass_password_manager-3.3.1-sm+an+fx+fn.xpi?src=api","size":6398094,"developerComments":null,"reviewURL":"https://addons.mozilla.org/en-US/firefox/addon/lastpass-password-manager/reviews/?src=api","reviewCount":1341,"totalDownloads":11135665,"weeklyDownloads":51841,"dailyUsers":732003,"updateDate":1457433941000,"supportURL":"http://forums.lastpass.com/","isCompatible":true,"install":{}};
+    // FULL VERSION var LP = {"id":"support@lastpass.com","icons":{"32":"https://addons.cdn.mozilla.net/user-media/addon_icons/8/8542-32.png?modified=1457436015","64":"https://addons.cdn.mozilla.net/user-media/addon_icons/8/8542-64.png?modified=1457436015"},"name":"LastPass Password Manager","type":"extension","version":"3.3.1","repositoryStatus":4,"creator":{"name":"LastPass","url":"https://addons.mozilla.org/en-US/firefox/user/lastpass/?src=api"},"description":"LastPass, an award-winning password manager, saves your passwords and gives you secure access from every computer and mobile device.","fullDescription":"LastPass is a password manager that simplifies everything you do online by remembering your passwords, logging into your sites with one click, creating strong passwords for every account, and so much more.\n\nJoin over 7 million people who love getting more done every day with our award-winning password manager!\n\nWith LastPass, you only remember one master password and LastPass takes care of the rest. It fills your logins for you and instantly syncs from your desktop to your laptop, your computer to your smartphone, your tablet to the Web, so you never struggle to remember another password.\n\nWhy Use a Password Manager?\n- Save, encrypt and backup all your passwords and logins, automatically\n- Sync your data no matter which browser, computer, or mobile device you use\n- Only one strong master password to remember\n- Securely store more logins, with more universal recognition of websites, including bank logins\n- All the features you need to be more productive and efficient\n- Only YOU know your master password, LastPass never has your key\n- Secure offline access to your data via the browser extensions and mobile apps\n\nSave Everything & Increase Productivity:\n- Store login usernames and passwords for all online accounts\n- Fill web logins automatically - no typing required!\n- Checkout fast with shopping profiles\n- Create Secure Notes to store memberships, credit cards, & other important records\n- Attach documents, PDFs, images, audio, and more\n- Keep everything organized in a searchable “vault”\n- Collaborate with others with more secure password sharing features\n\nUniversal Access:\n- Add LastPass to any browser on any computer\n- Login with the same LastPass account everywhere\n- Sync all of your passwords and data automatically\n- Upgrade to LastPass Premium for unlimited sync across unlimited devices, including any desktop, laptop, smartphone, or tablet.\nLearn more: https://lastpass.com/go-premium\n\n\nSecurity First:\n- Generate secure passwords to replace weak ones\n- Change passwords automatically on over 75 sites with Auto-Password Change\n- Create strong, unique passwords as you sign up for new websites\n- Protect your LastPass account with multifactor authentication\n- Audit your passwords with the LastPass Security Challenge\n- Flexible security features like autologoff options and master password reprompts\n\nLastPass utilizes military-grade AES 256bit encryption implemented with salted hashing, along with PBKDF2 encryption keys to protect from brute-force attacks and other threats. All sensitive user data is encrypted and decrypted locally on the user's machine, so that only encrypted, sensitive information is ever synced with LastPass. Your master password is never shared with LastPass.\n\nLastPass is free to download and use on any desktop or laptop computer. LastPass Premium adds more features, like unlimited sync across any type of device, plus sharing features for family, and Premium two-factor authentication options..\n\nLearn about more features and get LastPass for Internet Explorer, Firefox, Safari, and Opera from www.LastPass.com","isPlatformCompatible":true,"eula":null,"screenshots":[{"url":"https://addons.cdn.mozilla.net/user-media/previews/full/171/171883.png?src=api&modified=1457369923","width":"440","height":"280","thumbnailURL":"https://addons.cdn.mozilla.net/user-media/previews/thumbs/171/171883.png?src=api&modified=1457369923","thumbnailWidth":"200","thumbnailHeight":"127","caption":"LastPass is an award-winning password manager and form fill for all browsers, platforms, and mobile devices."},{"url":"https://addons.cdn.mozilla.net/user-media/previews/full/171/171884.png?src=api&modified=1457369924","width":"640","height":"400","thumbnailURL":"https://addons.cdn.mozilla.net/user-media/previews/thumbs/171/171884.png?src=api&modified=1457369924","thumbnailWidth":"200","thumbnailHeight":"125","caption":"All your data, everywhere you need it."},{"url":"https://addons.cdn.mozilla.net/user-media/previews/full/171/171885.png?src=api&modified=1457369924","width":"640","height":"400","thumbnailURL":"https://addons.cdn.mozilla.net/user-media/previews/thumbs/171/171885.png?src=api&modified=1457369924","thumbnailWidth":"200","thumbnailHeight":"125","caption":"Autofill your logins & save as you go, no forgotten passwords."},{"url":"https://addons.cdn.mozilla.net/user-media/previews/full/171/171886.png?src=api&modified=1457369924","width":"640","height":"400","thumbnailURL":"https://addons.cdn.mozilla.net/user-media/previews/thumbs/171/171886.png?src=api&modified=1457369924","thumbnailWidth":"200","thumbnailHeight":"125","caption":"Create strong passwords & LastPass remembers them for you."},{"url":"https://addons.cdn.mozilla.net/user-media/previews/full/171/171887.png?src=api&modified=1457369924","width":"640","height":"400","thumbnailURL":"https://addons.cdn.mozilla.net/user-media/previews/thumbs/171/171887.png?src=api&modified=1457369924","thumbnailWidth":"200","thumbnailHeight":"125","caption":"Manage all of your accounts from one easy-to-use vault."}],"averageRating":4,"learnmoreURL":"https://addons.mozilla.org/en-US/firefox/addon/lastpass-password-manager/?src=api","homepageURL":"https://lastpass.com/","sourceURI":"https://addons.mozilla.org/firefox/downloads/file/407589/lastpass_password_manager-3.3.1-sm+an+fx+fn.xpi?src=api","size":6398094,"developerComments":null,"reviewURL":"https://addons.mozilla.org/en-US/firefox/addon/lastpass-password-manager/reviews/?src=api","reviewCount":1341,"totalDownloads":11135665,"weeklyDownloads":51841,"dailyUsers":732003,"updateDate":1457433941000,"supportURL":"http://forums.lastpass.com/","isCompatible":true,"install":{}};
+    var LP = {
+      "id": "support@lastpass.com",
+      "icons": {
+        "32": "https://addons.cdn.mozilla.net/user-mediupdateListAttributesa/addon_icons/8/8542-32.png?modified=1457436015",
+        "64": "https://addons.cdn.mozilla.net/user-media/addon_icons/8/8542-64.png?modified=1457436015"
+      },
+      "name": "LastPass Password Manager",
+      "type": "extension",
+      "version": "3.3.1",
+      "repositoryStatus": 4,
+      "creator": {
+        "name": "LastPass",
+        "url": "https://addons.mozilla.org/en-US/firefox/user/lastpass/?src=api"
+      },
+      "description": "LastPass, an award-winning password manager, saves your passwords and gives you secure access from every computer and mobile device.",
+      "fullDescription": "LastPass is a password manager that simplifies everything you do online by remembering your passwords, logging into your sites with one click, creating strong passwords for every account, and so much more.\n\nJoin over 7 million people who love getting more done every day with our award-winning password manager!\n\nWith LastPass, you only remember one master password and LastPass takes care of the rest. It fills your logins for you and instantly syncs from your desktop to your laptop, your computer to your smartphone, your tablet to the Web, so you never struggle to remember another password.\n\nWhy Use a Password Manager?\n- Save, encrypt and backup all your passwords and logins, automatically\n- Sync your data no matter which browser, computer, or mobile device you use\n- Only one strong master password to remember\n- Securely store more logins, with more universal recognition of websites, including bank logins\n- All the features you need to be more productive and efficient\n- Only YOU know your master password, LastPass never has your key\n- Secure offline access to your data via the browser extensions and mobile apps\n\nSave Everything & Increase Productivity:\n- Store login usernames and passwords for all online accounts\n- Fill web logins automatically - no typing required!\n- Checkout fast with shopping profiles\n- Create Secure Notes to store memberships, credit cards, & other important records\n- Attach documents, PDFs, images, audio, and more\n- Keep everything organized in a searchable “vault”\n- Collaborate with others with more secure password sharing features\n\nUniversal Access:\n- Add LastPass to any browser on any computer\n- Login with the same LastPass account everywhere\n- Sync all of your passwords and data automatically\n- Upgrade to LastPass Premium for unlimited sync across unlimited devices, including any desktop, laptop, smartphone, or tablet.\nLearn more: https://lastpass.com/go-premium\n\n\nSecurity First:\n- Generate secure passwords to replace weak ones\n- Change passwords automatically on over 75 sites with Auto-Password Change\n- Create strong, unique passwords as you sign up for new websites\n- Protect your LastPass account with multifactor authentication\n- Audit your passwords with the LastPass Security Challenge\n- Flexible security features like autologoff options and master password reprompts\n\nLastPass utilizes military-grade AES 256bit encryption implemented with salted hashing, along with PBKDF2 encryption keys to protect from brute-force attacks and other threats. All sensitive user data is encrypted and decrypted locally on the user's machine, so that only encrypted, sensitive information is ever synced with LastPass. Your master password is never shared with LastPass.\n\nLastPass is free to download and use on any desktop or laptop computer. LastPass Premium adds more features, like unlimited sync across any type of device, plus sharing features for family, and Premium two-factor authentication options..\n\nLearn about more features and get LastPass for Internet Explorer, Firefox, Safari, and Opera from www.LastPass.com",
+      "isPlatformCompatible": true,
+      "eula": null,
+      "screenshots": [{
+        "url": "https://addons.cdn.mozilla.net/user-media/previews/full/171/171883.png?src=api&modified=1457369923",
+        "width": "440",
+        "height": "280",
+        "thumbnailURL": "https://addons.cdn.mozilla.net/user-media/previews/thumbs/171/171883.png?src=api&modified=1457369923",
+        "thumbnailWidth": "200",
+        "thumbnailHeight": "127",
+        "caption": "LastPass is an award-winning password manager and form fill for all browsers, platforms, and mobile devices."
+      }, {
+        "url": "https://addons.cdn.mozilla.net/user-media/previews/full/171/171884.png?src=api&modified=1457369924",
+        "width": "640",
+        "height": "400",
+        "thumbnailURL": "https://addons.cdn.mozilla.net/user-media/previews/thumbs/171/171884.png?src=api&modified=1457369924",
+        "thumbnailWidth": "200",
+        "thumbnailHeight": "125",
+        "caption": "All your data, everywhere you need it."
+      }, {
+        "url": "https://addons.cdn.mozilla.net/user-media/previews/full/171/171885.png?src=api&modified=1457369924",
+        "width": "640",
+        "height": "400",
+        "thumbnailURL": "https://addons.cdn.mozilla.net/user-media/previews/thumbs/171/171885.png?src=api&modified=1457369924",
+        "thumbnailWidth": "200",
+        "thumbnailHeight": "125",
+        "caption": "Autofill your logins & save as you go, no forgotten passwords."
+      }, {
+        "url": "https://addons.cdn.mozilla.net/user-media/previews/full/171/171886.png?src=api&modified=1457369924",
+        "width": "640",
+        "height": "400",
+        "thumbnailURL": "https://addons.cdn.mozilla.net/user-media/previews/thumbs/171/171886.png?src=api&modified=1457369924",
+        "thumbnailWidth": "200",
+        "thumbnailHeight": "125",
+        "caption": "Create strong passwords & LastPass remembers them for you."
+      }, {
+        "url": "https://addons.cdn.mozilla.net/user-media/previews/full/171/171887.png?src=api&modified=1457369924",
+        "width": "640",
+        "height": "400",
+        "thumbnailURL": "https://addons.cdn.mozilla.net/user-media/previews/thumbs/171/171887.png?src=api&modified=1457369924",
+        "thumbnailWidth": "200",
+        "thumbnailHeight": "125",
+        "caption": "Manage all of your accounts from one easy-to-use vault."
+      }],
+      "averageRating": 4,
+      "learnmoreURL": "https://addons.mozilla.org/en-US/firefox/addon/lastpass-password-manager/?src=api",
+      "homepageURL": "https://lastpass.com/",
+      "sourceURI": "https://addons.mozilla.org/firefox/downloads/file/407589/lastpass_password_manager-3.3.1-sm+an+fx+fn.xpi?src=api",
+      "size": 6398094,
+      "developerComments": null,
+      "reviewURL": "https://addons.mozilla.org/en-US/firefox/addon/lastpass-password-manager/reviews/?src=api",
+      "reviewCount": 1341,
+      "totalDownloads": 11135665,
+      "weeklyDownloads": 51841,
+      "dailyUsers": 732003,
+      "updateDate": 1457433941000,
+      "supportURL": "http://forums.lastpass.com/",
+      "isCompatible": true,
+      "install": {}
+    };
+
+    elements.push(createItem(LP, false, true))
     elements.push(createItem(LP, false, true))
 
     for (let element of elements){
       element.setAttribute("class", "cliqz-feature");
+      element.setAttribute("status", "new");
 
       this._listBox.insertBefore(element, this._listBox.lastChild);
     }
-
-    this.updateListAttributes();
-
-
-    this._listBox.setAttribute("local", showLocal);
-    this._listBox.setAttribute("remote", !showLocal);
-
-    gViewController.updateCommands();
-    gViewController.notifyViewChanged();
+    this._listBox.lastChild.setAttribute("status", "installed");
 
   },
   hide: function(){
