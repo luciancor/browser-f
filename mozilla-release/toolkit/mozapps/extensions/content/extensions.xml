@@ -1768,12 +1768,14 @@
         </xul:vbox>
         <xul:vbox class="status-control-wrapper">
           <xul:hbox anonid="control-container" class="control-container">
+            <!--
             <xul:button anonid="enable-btn"  class="addon-control enable"
                         label="&cmd.enableAddon.label;"
                         oncommand="document.getBindingParent(this).userDisabled = false;"/>
             <xul:button anonid="disable-btn" class="addon-control disable"
                         label="&cmd.disableAddon.label;"
                         oncommand="document.getBindingParent(this).userDisabled = true;"/>
+            -->
             <xul:button anonid="remove-btn" class="addon-control remove"
                         label="&cmd.uninstallAddon.label;"
                         oncommand="document.getBindingParent(this).uninstall();"/>
@@ -1802,21 +1804,27 @@
                 },
                 onDownloadFailed: function() {
                   progress.textContent = "Download failed";
-                  setTimeout(function(){ gViewController.loadView("addons://features/"); }, 1000);
+                  gViewController.loadView("addons://features/");
                 },
                 onInstallFailed: function() {
                   progress.textContent = "Install failed";
-                  setTimeout(function(){ gViewController.loadView("addons://features/"); }, 1000);
+                  gViewController.loadView("addons://features/");
                 },
                 onInstallEnded: function(aInstall, aAddon) {
                   progress.textContent = "Success";
-                  setTimeout(function(){ gViewController.loadView("addons://features/"); }, 1000);
+                  gViewController.loadView("addons://features/");
                 }
               });
               addon.install();
             },
             "application/x-xpinstall"
           );
+        ]]></body>
+      </method>
+      <method name="uninstall">
+        <body><![CDATA[
+          this.mAddon.uninstall();
+          gViewController.loadView("addons://features/");
         ]]></body>
       </method>
     </implementation>
