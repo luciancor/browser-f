@@ -1792,15 +1792,25 @@
       ]]></constructor>
       <method name="install">
         <body><![CDATA[
-          var progress = document.getAnonymousElementByAttribute(this, "anonid", "icon"),
-              size = this.mAddon.size;
+          var progress = document.getAnonymousElementByAttribute(this, "anonid", "install");
 
           AddonManager.getInstallForURL(this.mAddon.sourceURI,
             function(addon) {
               addon.addListener({
                 onDownloadProgress: function(aInstall) {
-                  console.log(aInstall.progress);
-                  progress.textContent = aInstall.progress / size;
+                  progress.textContent = "Installing " + parseInt(aInstall.progress / aInstall.maxProgress * 100) + "%";
+                },
+                onDownloadFailed: function() {
+                  progress.textContent = "Download failed";
+                  setTimeout(function(){ gViewController.loadView("addons://features/"); }, 1000);
+                },
+                onInstallFailed: function() {
+                  progress.textContent = "Install failed";
+                  setTimeout(function(){ gViewController.loadView("addons://features/"); }, 1000);
+                },
+                onInstallEnded: function(aInstall, aAddon) {
+                  progress.textContent = "Success";
+                  setTimeout(function(){ gViewController.loadView("addons://features/"); }, 1000);
                 }
               });
               addon.install();
